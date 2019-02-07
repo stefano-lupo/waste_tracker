@@ -1,0 +1,18 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+
+# Note also need: sudo apt install -y python3-rpi.gpio
+[packages]
+requests="*"
+PiCamera="*" # This is only actually installable on Pi
+pi-rc522="*"
+#spidev = "*"
+#rpi-gpio = "*"
+
+[requires]
+python_version = "3.6"
