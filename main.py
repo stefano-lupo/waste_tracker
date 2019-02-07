@@ -1,6 +1,8 @@
+import sys
+
 from scanner import Scanner
 from camera import Camera
-from data_pusher import DataPusher
+from data_pusher import *
 from weigher import Weigher
 
 scanner = Scanner()
@@ -20,5 +22,10 @@ def main():
         scanner.poll_sim(onTag)
 
 if __name__ == '__main__':
+    if len(sys.argv) >= 3:
+        base_url = "http://" + sys.argv[1] + ":" + sys.argv[2]
+        print("Overwriting default to server endpoint to " + base_url)
+        set_base_url(base_url)
+    
     main()
 

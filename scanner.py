@@ -1,6 +1,6 @@
 # from pirc522 import *
 # from pirc522 import RFID
-from pirc522 import RFID
+# from pirc522 import RFID
 import uuid
 
 class Scanner:
