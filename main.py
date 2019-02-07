@@ -2,9 +2,10 @@ import sys
 
 from scanner import Scanner
 from camera import Camera
-from data_pusher import *
+from data_pusher import DataPusher, DataPushRequest
 from weigher import Weigher
 
+data_pusher = DataPusher()
 scanner = Scanner()
 camera = Camera()
 
@@ -13,8 +14,8 @@ weigher = Weigher()
 def onTag(rfid):
     pic_path = camera.take_picture(rfid)
     delta_grams = weigher.get_delta()
-    dataPusher = DataPusher(rfid, pic_path, delta_grams)
-    dataPusher.push()
+    data_push_request = DataPushRequest(rfid, pic_path, delta_grams)
+    data_pusher.push(data_push_request)
 
 def main():
     print("Starting waste tracker..")
@@ -25,7 +26,6 @@ if __name__ == '__main__':
     if len(sys.argv) >= 3:
         base_url = "http://" + sys.argv[1] + ":" + sys.argv[2]
         print("Overwriting default to server endpoint to " + base_url)
-        set_base_url(base_url)
-    
+        data_pusher = DataPusher(base_url)    
     main()
 
