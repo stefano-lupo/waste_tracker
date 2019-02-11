@@ -3,20 +3,30 @@
 # from pirc522 import RFID
 import uuid
 
+import RPi.GPIO as GPIO
+import SimpleMFRC522
+
 class Scanner:
     # rdr = RFID() # This also only works on a pi
 
     def __init__(self):
         print("Scanner started")
+        self.reader = SimpleMFRC522.SimpleMFRC522()
     
     def poll_sim(self, callback):
-        print("Press any key to simulate RFID read")
-        input()
-        id = uuid.uuid4()
-        print("Simulating RFID ID = ", id)
+        id, text = self.reader.read()
+        print(id)
+        print(text)
         callback(id)
-    
-    # def pollRFIDReader():
+
+    def cleanup(self):
+        GPIO.cleanup()
+        print("Scanner cleaned up GPIOs")
+
+
+
+
+# def pollRFIDReader():
 #     while True:
 #     rdr.wait_for_tag()
 #     (error, tag_type) = rdr.request()

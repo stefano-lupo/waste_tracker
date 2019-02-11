@@ -1,11 +1,11 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "0b3ec9153281ab286c516ea61966f7ae0ced51f86a1708ca444f525de2191ba4"
+            "sha256": "f007a7fbee5da819e5683b610fb2bfbb6e47e44ce3f0c8b65d2867c1af1cc420"
         },
         "pipfile-spec": 6,
         "requires": {
-            "python_version": "3.6"
+            "python_version": "3.5"
         },
         "sources": [
             {
@@ -37,14 +37,6 @@
             ],
             "version": "==2.8"
         },
-        "pi-rc522": {
-            "hashes": [
-                "sha256:438a65a8a50a824e800353e3642878f44e410444b67b028fc25474fb19e653f8",
-                "sha256:a5f5f1946a4b302a13c270c0b4420a28ae4fcf79478a8ec9647550877ff1fd34"
-            ],
-            "index": "pypi",
-            "version": "==2.2.1"
-        },
         "picamera": {
             "hashes": [
                 "sha256:890815aa01e4d855a6a95dd3ad0953b872a6b954982106407df0c5a31a163e50"
@@ -59,18 +51,6 @@
             ],
             "index": "pypi",
             "version": "==2.21.0"
-        },
-        "rpi.gpio": {
-            "hashes": [
-                "sha256:a4210ad63bfe844e43995286de0d3950dfacfa0f3799bb9392770ac54a7d2e47"
-            ],
-            "version": "==0.6.5"
-        },
-        "spidev": {
-            "hashes": [
-                "sha256:09d2b5122f0dd79910713a11f9a0020f71537224bf829916def4fffc0ea59456"
-            ],
-            "version": "==3.2"
         },
         "urllib3": {
             "hashes": [

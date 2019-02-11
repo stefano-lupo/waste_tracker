@@ -10,9 +10,7 @@ verify_ssl = true
 [packages]
 requests="*"
 PiCamera="*" # This is only actually installable on Pi
-pi-rc522="*"
-#spidev = "*"
-#rpi-gpio = "*"
+RPi
 
 [requires]
-python_version = "3.6"
+python_version = "3.5"
