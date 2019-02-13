@@ -21,12 +21,13 @@ class DataPusher:
             print ("Unable to push data for - leaving in local storage", request.pic_path)
 
 class DataPushRequest:
-    def __init__(self, rfid, pic_path, delta_grams):
+    def __init__(self, rfid, dish_name pic_path, delta_grams):
         self.pic_path = pic_path
         timestamp = datetime.datetime.now().isoformat()
         rfid_str = str(rfid)
         payload = {
             "rfid": rfid_str,
+            "dish_name": dish_name,
             "weight": delta_grams,
             "collected_timestamp": timestamp
         }

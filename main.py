@@ -13,12 +13,11 @@ scanner = Scanner()
 camera = Camera()
 weigher = Weigher()
 
-def onTag(rfid):
-    # pic_path = camera.take_picture(rfid)
-    pic_path = "tmp_images/spinthing.png"
+def onTag(rfid, dish_name):
+    pic_path = camera.take_picture(rfid)
     delta_grams = weigher.get_delta()
-    print("Weight: %d" % delta_grams)
-    data_push_request = DataPushRequest(rfid, pic_path, delta_grams)
+    print("Scanned: %s\nDish Name: %s\nWeight: %d\nPic Path: %s\n\n" % (rfid, dish_name, delta_grams, pic_path))
+    data_push_request = DataPushRequest(rfid, dish_name, pic_path, delta_grams)
     data_pusher.push(data_push_request)
 
 def main():

@@ -10,14 +10,14 @@ class Scanner:
     # rdr = RFID() # This also only works on a pi
 
     def __init__(self):
-        print("Scanner started")
         self.reader = SimpleMFRC522.SimpleMFRC522()
+        print("Scanner started")
     
     def poll_sim(self, callback):
         id, text = self.reader.read()
         print(id)
         print(text)
-        callback(id)
+        callback(id, text)
 
     def cleanup(self):
         GPIO.cleanup()
